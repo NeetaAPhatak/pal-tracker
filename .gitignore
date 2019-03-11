@@ -28,5 +28,6 @@ msbuild.wrn
 .idea
 *.iml
 .vscode
+.vs
 
 ci/variables.yml
