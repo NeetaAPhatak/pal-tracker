@@ -32,11 +32,13 @@ namespace PalTracker
                 ));
 
             services.AddSingleton(sp => new CloudFoundryInfo(
-                Configuration.GetValue<string>("PORT", "123"),
+                Configuration.GetValue<string>("PORT", "5000"),
                 Configuration.GetValue<string>("MEMORY_LIMIT", "512M"),
                 Configuration.GetValue<string>("CF_INSTANCE_INDEX", "error"),
                 Configuration.GetValue<string>("CF_INSTANCE_ADDR", "127.0.0.1")
                 ));
+
+            services.AddSingleton<ITimeEntryRepository, InMemoryTimeEntryRepository>();
 
         }
 
